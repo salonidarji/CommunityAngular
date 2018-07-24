@@ -1,0 +1,24 @@
+<table  height="50%" width="50%" align="center">
+<form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
+  <tr><td>
+    <br><input type="text" formControlName="comm_name" placeholder="Community Name" class="form-control"><br>
+    <div *ngIf="!communityForm.get('comm_name').valid && communityForm.get('comm_name').touched">
+        <span *ngIf="communityForm.get('comm_name').hasError('required')" class="alert alert-danger" >Community Name Is REQUIERD..!!!</span>
+        <span *ngIf="communityForm.get('comm_name').hasError('slangWords')" class="alert alert-danger" >Slang Words Are Not Allowed..!!!</span>
+    </div>
+  </td></tr>
+  <tr><td>
+      <br><textarea formControlName="comm_des" placeholder="Community Description" name="" cols="30" rows="10"></textarea>   <br> 
+      <div *ngIf="!communityForm.get('comm_des').valid && communityForm.get('comm_des').touched">
+          <span class="alert alert-danger" >Community Description Is REQUIERD..!!!</span>
+        </div>
+    </td></tr>
+    <tr><td>
+      <br><input type="file" formControlName="comm_pic" (change)="onFileSelected($event)"><br>
+     
+      </td></tr>
+  <tr><td>
+    <input type="submit" class="btn btn-primary btn-block">
+  </td></tr>
+</form>
+</table>

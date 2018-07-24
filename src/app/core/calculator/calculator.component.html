@@ -1,0 +1,23 @@
+<input type="number" placeholder="Number 1" [(ngModel)]="no1"><br>
+<input type="number" placeholder="Number 2" [(ngModel)]="no2"><br>
+<button (click)="onClick()">Calculate</button>
+<label >{{ans}}</label>
+
+<table align="center" border="1" padding="2" >
+  <thead>
+    <tr>
+      <td>Number 1</td>
+      <td>Number 2</td>
+      <td>Answer</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of arr">
+      <td>{{item.no1}}</td>
+      <td>{{item.no2}}</td>
+      <td>{{item.ans}}</td>
+      <td><button (click)="onDelete(item)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

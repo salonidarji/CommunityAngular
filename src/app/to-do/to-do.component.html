@@ -1,0 +1,22 @@
+<p>
+  to-do works!
+</p>
+
+<input type="text" [(ngModel)]="str" (keyup.enter)="addToDo(todo)">
+
+
+<table height="50%" width="50%" align="center">
+  <thead>
+  <th>Id</th>
+  <th>Name</th>
+  <th>Action</th>
+</thead>
+<tbody>
+
+    <tr *ngFor="let item of todo">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td> <button (click)="onDelete(item)">Delete</button></td>
+    </tr>
+</tbody>
+</table>

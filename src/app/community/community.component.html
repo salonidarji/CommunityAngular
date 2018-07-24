@@ -1,0 +1,24 @@
+
+
+<div class="row">
+        <div class="col-md-3">
+                <app-sidebar [x]="str" (myEvent)="search($event)">Sidebar Loading..!!!</app-sidebar>
+        </div>
+        <div class="col-md-9">
+            
+                    <!-- <button (click)="onClick()">Add Task</button> -->
+         <div class="row">          
+            <div *ngFor="let item of arr" class="col-sm-6 col-md-4">
+        <div class="card"  style="width: 18rem;" >
+                <img class="card-img-top" height="150px" width="150px" src="http://letsmeetbackend.herokuapp.com/images/communities/{{item.comm_pic}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.comm_name}}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button (click)="giveName(item.comm_name)">Display {{item.comm_name}}</button>
+                </div>
+              </div>
+            </div>
+        </div>        
+    </div>
+    </div>
+    <app-footer>Footer Loading...!!!</app-footer>
